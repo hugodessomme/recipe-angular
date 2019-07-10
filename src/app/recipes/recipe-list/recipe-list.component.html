@@ -9,24 +9,10 @@
 <div class="row">
   <div class="col">
     <div class="list-group">
-      <a
-        *ngFor="let recipe of recipes"
-        href="#"
-        class="list-group-item list-group-item-action"
-      >
-        <div class="media">
-          <div class="media-body">
-            <h5>{{ recipe.name }}</h5>
-            {{ recipe.description }}
-          </div>
-          <img
-            [src]="recipe.imagePath"
-            alt="{{ recipe.name }}"
-            style="max-height: 50px"
-          />
-        </div>
-      </a>
+      <app-recipe-item
+        *ngFor="let recipeEl of recipes"
+        [recipe]="recipeEl"
+      ></app-recipe-item>
     </div>
-    <app-recipe-item></app-recipe-item>
   </div>
 </div>
